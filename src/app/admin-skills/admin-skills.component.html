@@ -1,1 +1,29 @@
-<p>admin-skills works!</p>
+<div class="container color-dark">
+  <div class="col">
+    <p>Skills items</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <form>
+      <input type="text" class="txt" skills="skills" placeholder="Nombre de la habilidad" [(ngModel)]="mySkill.skills" required><br>
+      
+      <!-- Botón dinámico para agregar o actualizar -->
+      <input
+        type="submit"
+        class="btn"
+        [value]="selectedSkillId ? 'Actualizar' : 'Agregar'"
+        (click)="selectedSkillId ? updateSkill() : AgregarSkill()"
+      >
+    </form>
+  </div>
+
+  <div class="col">
+    <p class="life-container" *ngFor="let skill of skills">
+      <input type="submit" class="btn" value="editar" (click)="editSkill(skill)">
+      <input type="submit" class="btn" value="eliminar" (click)="deleteSkill(skill.id)">
+      {{ skill.skills }}
+    </p>
+  </div>
+</div>
