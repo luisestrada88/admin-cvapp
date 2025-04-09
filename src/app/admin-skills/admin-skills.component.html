@@ -7,23 +7,18 @@
 <div class="container color-light">
   <div class="col">
     <form>
-      <input type="text" class="txt" skills="skills" placeholder="Nombre de la habilidad" [(ngModel)]="mySkill.skills" required><br>
-      
-      <!-- Botón dinámico para agregar o actualizar -->
-      <input
-        type="submit"
-        class="btn"
-        [value]="selectedSkillId ? 'Actualizar' : 'Agregar'"
-        (click)="selectedSkillId ? updateSkill() : AgregarSkill()"
-      >
+      <input type="text" class="txt" name="skills" placeholder="Skill" [(ngModel)]="mySkill.skills"><br>
+      <input type="submit" class="btn" [value]="buttonText" (click)="AgregarSkill()">
     </form>
   </div>
 
   <div class="col">
     <p class="life-container" *ngFor="let skill of skills">
-      <input type="submit" class="btn" value="editar" (click)="editSkill(skill)">
-      <input type="submit" class="btn" value="eliminar" (click)="deleteSkill(skill.id)">
-      {{ skill.skills }}
+      <span class="button-group-inline">
+      <input type="submit" class="btn" value="Edit" (click)="editSkill(skill)" />
+      <input type="submit" class="btn eliminar-btn" value="Delete" (click)="deleteSkill(skill.id)" />
+      {{ skill.skills }}  
+      </span>
     </p>
   </div>
 </div>

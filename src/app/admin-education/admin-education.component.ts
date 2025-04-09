@@ -11,36 +11,52 @@ import { map } from 'rxjs/operators';
 export class AdminEducationComponent {
   itemCount: number = 0;
   buttonText: string = 'Agregar';
-  goalText: string = '';
   education: Education[] = [];
   myEducation: Education = new Education();
+  selectedEducationId: string | null = null;
 
-  constructor(public educationService: EducationService)
- {
-    console.log(this.educationService);
+  constructor(public educationService: EducationService) {
     this.educationService.getEducation().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
+      map((changes: any[]) =>
+        changes.map((c: any) =>
           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
         )
       )
-    ).subscribe(data => {
+    ).subscribe((data: any[]) => {
       this.education = data;
-      console.log(this.education);
     });
   }
 
   AgregarEducation() {
-   console.log(this.myEducation);
-     this.educationService.createEducation(this.myEducation).then(() => {
-    console.log('Created new item successfully!');
-  });
- }
+    if (this.selectedEducationId) {
+      this.educationService.updateEducation(this.selectedEducationId, this.myEducation).then(() => {
+        this.resetForm();
+        console.log('Updated education successfully!');
+      });
+    } else {
+      this.educationService.createEducation(this.myEducation).then(() => {
+        this.resetForm();
+        console.log('Created new education successfully!');
+      });
+    }
+  }
 
   deleteEducation(id?: string) {
-   this.educationService.deleteEducation(id).then(() => {
-    console.log('Delete item successfully!');
+    this.educationService.deleteEducation(id).then(() => {
+      console.log('Deleted education successfully!');
     });
-  console.log(id);
- }
+  }
+
+  editEducation(educacion: any) {
+    this.myEducation = { carrera: educacion.carrera, educationHome: educacion.educationHome, startDate: educacion.startDate, endDate: educacion.endDate };
+    this.selectedEducationId = educacion.id;
+    this.buttonText = 'Update';
+  }
+
+  resetForm() {
+    this.myEducation = new Education();
+    this.selectedEducationId = null;
+    this.buttonText = 'Agregar';
+  }
 }
+

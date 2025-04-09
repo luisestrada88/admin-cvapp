@@ -26,4 +26,8 @@ export class WorkExperienceService {
  deleteWorkExperience(id? : string): Promise<void> {
   return this.workExperienceRef.doc(id).delete();
  }
+ 
+ updateWorkExperience(id: string, workExperienceData: WorkExperience): Promise<void> {
+  return this.workExperienceRef.doc(id).update({ ...workExperienceData });
+ }
 }

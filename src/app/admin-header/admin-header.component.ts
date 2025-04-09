@@ -1,48 +1,63 @@
 import { Component } from '@angular/core';
 import { HeaderService } from '../services/header-service/header.service';
-import { Header }from '../models/header/header.model';
+import { Header } from '../models/header/header.model';
 import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-admin-header',
   templateUrl: './admin-header.component.html',
-  styleUrl: './admin-header.component.css'
+  styleUrls: ['./admin-header.component.css']
 })
 export class AdminHeaderComponent {
-   itemCount: number = 0;
-   btnTxt: string = "Agregar";
-   header: Header[] = [];
-   myHeader: Header = new Header();
-    constructor(public headerService: HeaderService)
-    {
-        console.log(this.headerService);
-        this.headerService.getHeader().snapshotChanges().pipe(
-          map(changes =>
-            changes.map( c =>
-             ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-            )
-          )
-        ).subscribe(data => {
-          this.header = data;
-          console.log(this.header);
-        });
+  itemCount: number = 0;
+  btnTxt: string = "Agregar";
+  header: Header[] = [];
+  myHeader: Header = new Header();
+  selectedHeaderId: string | null = null;
+
+  constructor(public headerService: HeaderService) {
+    this.headerService.getHeader().snapshotChanges().pipe(
+      map((changes: any[]) =>
+        changes.map((c: any) =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe((data: any[]) => {
+      this.header = data;
+      console.log(this.header);
+    });
+  }
+
+  AgregarHeader() {
+    if (this.selectedHeaderId) {
+      this.headerService.updateHeader(this.selectedHeaderId, this.myHeader).then(() => {
+        this.resetForm();
+        console.log('Updated header successfully!');
+      });
+    } else {
+      this.headerService.createHeader(this.myHeader).then(() => {
+        this.resetForm();
+        console.log('Created new header successfully!');
+      });
     }
-
-  AgregarHeader(){
-    console.log(this.headerService);
-    this.headerService.createHeader(this.myHeader).then(() => {
-       console.log('Created new item successfully!');
-    });
   }
 
-  deleteHeader(id? :string){
+  deleteHeader(id?: string) {
     this.headerService.deleteHeader(id).then(() => {
-       console.log('Delete item successfully!');
+      console.log('Deleted header successfully!');
     });
-    console.log(id);
   }
 
-  updateHeader(id? :string){
-    alert('updating...');
+  editHeader(header: any) {
+    this.myHeader = { email: header.email, goalLife: header.goalLife, location: header.location, name: header.name,
+                      phoneNumber: header.phoneNumber, photoUrl: header.photoUrl, socialNetwork: header.socialNetwork };
+    this.selectedHeaderId = header.id;
+    this.btnTxt = "Update";
+  }
+
+  resetForm() {
+    this.myHeader = new Header();
+    this.selectedHeaderId = null;
+    this.btnTxt = "Agregar";
   }
 }

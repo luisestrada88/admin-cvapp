@@ -35,6 +35,7 @@
 
   <div class="col">
     <p class="life-container" *ngFor="let language of languages">
+      <span class="button-group-inline">
       <input
         type="submit"
         class="btn"
@@ -43,11 +44,12 @@
       />
       <input
         type="submit"
-        class="btn"
+        class="btn eliminar-btn"
         value="delete"
         (click)="deleteLanguages(language.id)"
       />
       {{ language.name }} – {{ language.level }}
+      </span>
     </p>
   </div>
 </div>

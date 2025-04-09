@@ -11,35 +11,54 @@ import { map } from 'rxjs/operators';
 export class AdminInterestsComponent {
   itemCount: number = 0;
   btnTxt: string = 'Agregar';
-  goalText: string = '';
   interests: Interests[] = [];
-  myInterests: Interests = new Interests();
+  myInterest: Interests = new Interests();
+  selectedInterestId: string | null = null;
 
   constructor(public interestsService: InterestsService) {
-    console.log(this.interestsService);
     this.interestsService.getInterests().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
+      map((changes: any[]) =>
+        changes.map((c: any) =>
           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
         )
       )
-    ).subscribe(data => {
+    ).subscribe((data: any[]) => {
       this.interests = data;
       console.log(this.interests);
     });
   }
 
   AgregarInterest() {
-    console.log(this.myInterests);
-    this.interestsService.createInterests(this.myInterests).then(() => {
-      console.log('Created new item successfully!');
+    if (this.selectedInterestId) {
+     
+      this.interestsService.updateInterests(this.selectedInterestId, this.myInterest).then(() => {
+        this.resetForm();
+        console.log('Updated interest successfully!');
+      });
+    } else {
+      
+      this.interestsService.createInterests(this.myInterest).then(() => {
+        this.resetForm();
+        console.log('Created new interest successfully!');
+      });
+    }
+  }
+
+  deleteInterests(id?: string) {
+    this.interestsService.deleteInterests(id).then(() => {
+      console.log('Deleted interest successfully!');
     });
   }
 
-  deleteInterest(id?: string) {
-    this.interestsService.deleteInterests(id).then(() => {
-      console.log('Delete item successfully!');
-    });
-    console.log(id);
+  editInterests(interest: any) {
+    this.myInterest = { interests: interest.interests };  
+    this.selectedInterestId = interest.id;
+    this.btnTxt = 'Update';
+  }
+
+  resetForm() {
+    this.myInterest = new Interests();
+    this.selectedInterestId = null;
+    this.btnTxt = 'Agregar';
   }
 }
