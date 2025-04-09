@@ -30,13 +30,13 @@ export class AdminLanguagesComponent {
 
   AgregarLanguages() {
     if (this.selectedLanguageId) {
-      // Si estamos editando
+      
       this.languagesService.updateLanguage(this.selectedLanguageId, this.myLanguage).then(() => {
         this.resetForm();
         console.log('Updated successfully!');
       });
     } else {
-      // Si estamos agregando
+
       this.languagesService.createLanguage(this.myLanguage).then(() => {
         this.resetForm();
         console.log('Created successfully!');

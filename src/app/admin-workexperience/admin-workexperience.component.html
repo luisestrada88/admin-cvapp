@@ -14,14 +14,19 @@
       <input type="text" class="txt" name="company" placeholder="company" [(ngModel)]="myWorkExperience.company"> <br>
       <input type="text" class="txt" name="accomplishments" placeholder="accomplishments" [(ngModel)]="myWorkExperience.accomplishment"> <br>
 
+      
       <input type="submit" class="btn" value="{{ buttonText }}" (click)="AgregarJob()">
+      
     </form>
   </div>
 
   <div class="col2">
     <p class="life-container" *ngFor="let job of workExperience;">
-      <input type="submit" class="btn" value="delete" (click)="deleteJob(job.id)">
+      <span class="button-group-inline">
+      <input type="submit" class="btn" value="edit" (click)="editJob(job)" />
+      <input type="submit" class="btn eliminar-btn" value="delete" (click)="deleteJob(job.id)">
       {{job.company}} - {{job.position}}
+      </span>
     </p>
   </div>
 </div>

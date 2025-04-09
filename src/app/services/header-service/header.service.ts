@@ -26,4 +26,8 @@ export class HeaderService {
    return this.headerRef.doc(id).delete();
   }
 
+  updateHeader(id: string, headerData: Header): Promise<void> {
+    return this.headerRef.doc(id).update({ ...headerData });
+  }
+
 }
