@@ -19,10 +19,19 @@
 
 /* Fondo general */
 body {
-  background-color: var(--mint);
+  background-image: url('assets/gradii-1920x1080 (3).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   font-family: var(--font-family);
   color: var(--text-green);
   padding: 2em;
+  body {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
 }
 
 /* Menú de navegación */
@@ -57,6 +66,15 @@ nav ul li a:hover {
   backdrop-filter: blur(8px); /* Vidrio esmerilado */
   border: 1px solid var(--border-green);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+
+    /* Fondo translúcido tipo vidrio esmerilado */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Columnas dentro del container */
@@ -85,8 +103,8 @@ nav ul li a:hover {
 
 /* Botones */
 input.btn {
-    background-color: #7dcea0; /* Fondo verde suave */
-    border: 1px solid #7dcea0;  /* Borde verde */
+    background-color: #7dcea0; 
+    border: 1px solid #7dcea0;  
     color: #fff;
     padding: 0.8rem 2.0rem;
     border-radius: 8px;
@@ -106,7 +124,7 @@ input.btn {
   }
 
   input.btn:active {
-    background-color: #5bb584; /* Fondo más oscuro al hacer clic */
+    background-color: #5bb584; 
   }
 
   button.eliminar-btn, input.eliminar-btn {
@@ -121,8 +139,8 @@ input.btn {
 
 
   button.eliminar-btn:hover, input.eliminar-btn:hover {
-    background-color: darkred;  /* Fondo rojo oscuro al pasar el mouse */
-    color: white;  /* Texto blanco */
+    background-color: darkred;  
+    color: white;
 }
 
 /* Tarjetas con los datos renderizados */
@@ -136,7 +154,7 @@ input.btn {
   color: var(--text-green);
 }
 
-/* Responsive */
+/* Responsi */
 @media (max-width: 600px) {
   .container {
     padding: 1em;
