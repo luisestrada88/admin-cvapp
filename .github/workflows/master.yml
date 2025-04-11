@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: echo 'hello world'
+      - run: echo 'workflow activo'
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v1
