@@ -1,4 +1,4 @@
-import "./chunk-2D66RMQP.js";
+import "./chunk-BRIAGI3N.js";
 import {
   FIREBASE_APP_NAME,
   FIREBASE_OPTIONS,
@@ -14,7 +14,7 @@ import {
   ɵgetDefaultInstanceOf,
   ɵlazySDKProxy,
   ɵzoneWrap
-} from "./chunk-OG5KL2FU.js";
+} from "./chunk-TUHZ3E72.js";
 import {
   Component,
   Deferred,
@@ -43,10 +43,10 @@ import {
   registerVersion,
   setLogLevel,
   uuidv4
-} from "./chunk-IYKWNOWL.js";
+} from "./chunk-QI2V6IRZ.js";
 import {
   isPlatformServer
-} from "./chunk-NGSW2YNN.js";
+} from "./chunk-OFPA5LDK.js";
 import {
   Inject,
   Injectable,
@@ -62,7 +62,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-YDWOA34S.js";
+} from "./chunk-UKW365ZZ.js";
 import {
   Observable,
   Subject,
@@ -84,14 +84,14 @@ import {
   switchMap,
   switchMapTo,
   timer
-} from "./chunk-CHD3SIRK.js";
+} from "./chunk-YKVAZMWW.js";
 import {
   __async,
   __spreadValues,
   __superGet
-} from "./chunk-XY4I24L7.js";
+} from "./chunk-FVETPLIC.js";
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire-app.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire-app.mjs
 var FirebaseApp = class {
   constructor(app) {
     return app;
@@ -159,7 +159,7 @@ var onLog2 = ɵzoneWrap(onLog, true);
 var registerVersion2 = ɵzoneWrap(registerVersion, true);
 var setLogLevel2 = ɵzoneWrap(setLogLevel, true);
 
-// ../../node_modules/@firebase/app-check/dist/esm/index.esm2017.js
+// node_modules/@firebase/app-check/dist/esm/index.esm2017.js
 var APP_CHECK_STATES = /* @__PURE__ */ new Map();
 var DEFAULT_STATE = {
   activated: false,
@@ -943,7 +943,7 @@ function registerAppCheck() {
 }
 registerAppCheck();
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire-app-check.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire-app-check.mjs
 var AppCheck = class {
   constructor(appCheck) {
     return appCheck;
@@ -994,7 +994,7 @@ var initializeAppCheck2 = ɵzoneWrap(initializeAppCheck, true);
 var onTokenChanged2 = ɵzoneWrap(onTokenChanged, true);
 var setTokenAutoRefreshEnabled2 = ɵzoneWrap(setTokenAutoRefreshEnabled, true);
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire-compat-auth.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire-compat-auth.mjs
 var proxyPolyfillCompat = {
   name: null,
   config: null,
@@ -1084,7 +1084,7 @@ var AngularFireAuth = class _AngularFireAuth {
   credential;
   constructor(options, name3, platformId, zone, schedulers, useEmulator, settings, tenantId, languageCode, useDeviceLanguage, persistence, _appCheckInstances) {
     const logins = new Subject();
-    const auth = of(void 0).pipe(observeOn(schedulers.outsideAngular), switchMap(() => zone.runOutsideAngular(() => import("./index.esm-ZMLMWAGA.js"))), map(() => ɵfirebaseAppFactory(options, zone, name3)), map((app) => ɵauthFactory(app, zone, useEmulator, tenantId, languageCode, useDeviceLanguage, settings, persistence)), shareReplay({
+    const auth = of(void 0).pipe(observeOn(schedulers.outsideAngular), switchMap(() => zone.runOutsideAngular(() => import("./index.esm-JHLUBOQQ.js"))), map(() => ɵfirebaseAppFactory(options, zone, name3)), map((app) => ɵauthFactory(app, zone, useEmulator, tenantId, languageCode, useDeviceLanguage, settings, persistence)), shareReplay({
       bufferSize: 1,
       refCount: false
     }));
@@ -1248,7 +1248,7 @@ var AngularFireAuthModule = class _AngularFireAuthModule {
   }], () => [], null);
 })();
 
-// ../../node_modules/@firebase/webchannel-wrapper/dist/bloom-blob/esm/bloom_blob_es2018.js
+// node_modules/@firebase/webchannel-wrapper/dist/bloom-blob/esm/bloom_blob_es2018.js
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var bloom_blob_es2018 = {};
 var Integer;
@@ -1655,7 +1655,7 @@ var Md5;
   Integer = bloom_blob_es2018.Integer = t;
 }).apply(typeof commonjsGlobal !== "undefined" ? commonjsGlobal : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
 
-// ../../node_modules/@firebase/webchannel-wrapper/dist/webchannel-blob/esm/webchannel_blob_es2018.js
+// node_modules/@firebase/webchannel-wrapper/dist/webchannel-blob/esm/webchannel_blob_es2018.js
 var commonjsGlobal2 = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var webchannel_blob_es2018 = {};
 var XhrIo;
@@ -3893,7 +3893,7 @@ var createWebChannelTransport;
   XhrIo = webchannel_blob_es2018.XhrIo = X2;
 }).apply(typeof commonjsGlobal2 !== "undefined" ? commonjsGlobal2 : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
 
-// ../../node_modules/@firebase/firestore/dist/index.esm2017.js
+// node_modules/@firebase/firestore/dist/index.esm2017.js
 var w = "@firebase/firestore";
 var User = class {
   constructor(e) {
@@ -18646,7 +18646,7 @@ function increment(e) {
   registerVersion(w, "4.7.3", "esm2017");
 }();
 
-// ../../node_modules/@firebase/firestore-compat/dist/index.esm2017.js
+// node_modules/@firebase/firestore-compat/dist/index.esm2017.js
 var name2 = "@firebase/firestore-compat";
 var version2 = "0.3.38";
 function validateSetOptions(methodName, options) {
@@ -19392,7 +19392,7 @@ function registerFirestore(instance) {
 }
 registerFirestore(firebase);
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire-compat-firestore.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire-compat-firestore.mjs
 function _fromRef(ref, scheduler = asyncScheduler) {
   return new Observable((subscriber) => {
     let unsubscribe;

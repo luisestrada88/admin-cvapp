@@ -25,14 +25,14 @@ import {
   querystring,
   querystringDecode,
   registerVersion
-} from "./chunk-IYKWNOWL.js";
+} from "./chunk-QI2V6IRZ.js";
 import {
   __async,
   __rest,
   __superGet
-} from "./chunk-XY4I24L7.js";
+} from "./chunk-FVETPLIC.js";
 
-// ../../node_modules/@firebase/auth/dist/esm2017/index-68602d24.js
+// node_modules/@firebase/auth/dist/esm2017/index-68602d24.js
 var ProviderId = {
   /** Facebook provider ID */
   FACEBOOK: "facebook.com",
@@ -8015,7 +8015,7 @@ registerAuth(
   /* ClientPlatform.BROWSER */
 );
 
-// ../../node_modules/@firebase/auth/dist/esm2017/internal.js
+// node_modules/@firebase/auth/dist/esm2017/internal.js
 function _cordovaWindow() {
   return window;
 }
@@ -8420,7 +8420,7 @@ function addFrameworkForLogging(auth, framework) {
   _castAuth(auth)._logFramework(framework);
 }
 
-// ../../node_modules/@firebase/auth-compat/dist/index.esm2017.js
+// node_modules/@firebase/auth-compat/dist/index.esm2017.js
 var name2 = "@firebase/auth-compat";
 var version2 = "0.5.14";
 var CORDOVA_ONDEVICEREADY_TIMEOUT_MS = 1e3;
@@ -9564,4 +9564,4 @@ registerAuthCompat(firebase);
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-2D66RMQP.js.map
+//# sourceMappingURL=chunk-BRIAGI3N.js.map

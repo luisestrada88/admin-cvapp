@@ -2,7 +2,7 @@ import {
   firebase,
   getApps,
   registerVersion
-} from "./chunk-IYKWNOWL.js";
+} from "./chunk-QI2V6IRZ.js";
 import {
   Inject,
   Injectable,
@@ -20,21 +20,21 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-YDWOA34S.js";
+} from "./chunk-UKW365ZZ.js";
 import {
   Observable,
   asyncScheduler,
   observeOn,
   subscribeOn,
   tap
-} from "./chunk-CHD3SIRK.js";
+} from "./chunk-YKVAZMWW.js";
 
-// ../../node_modules/firebase/app/dist/esm/index.esm.js
+// node_modules/firebase/app/dist/esm/index.esm.js
 var name = "firebase";
 var version = "10.14.1";
 registerVersion(name, version, "app");
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire.mjs
 var VERSION2 = new Version("ANGULARFIRE2_VERSION");
 function ɵgetDefaultInstanceOf(identifier, provided, defaultApp) {
   if (provided) {
@@ -231,12 +231,12 @@ var ɵzoneWrap = (it, blockUntilFirst) => {
   };
 };
 
-// ../../node_modules/firebase/compat/app/dist/esm/index.esm.js
+// node_modules/firebase/compat/app/dist/esm/index.esm.js
 var name2 = "firebase";
 var version2 = "10.14.1";
 firebase.registerVersion(name2, version2, "app-compat");
 
-// ../../node_modules/@angular/fire/fesm2022/angular-fire-compat.mjs
+// node_modules/@angular/fire/fesm2022/angular-fire-compat.mjs
 var noopFunctions = ["ngOnDestroy"];
 var ɵlazySDKProxy = (klass, observable, zone, options = {}) => {
   return new Proxy(klass, {
@@ -444,4 +444,4 @@ firebase/compat/app/dist/esm/index.esm.js:
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-OG5KL2FU.js.map
+//# sourceMappingURL=chunk-TUHZ3E72.js.map
